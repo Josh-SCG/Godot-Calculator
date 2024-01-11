@@ -1,0 +1,212 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq60wnnmamao0"]
+
+[ext_resource type="Script" path="res://calc.gd" id="1_lwvp8"]
+
+[node name="calc" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_lwvp8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -120.0
+offset_top = -80.0
+offset_right = 120.0
+offset_bottom = 160.0
+color = Color(0.270588, 0.431373, 0.431373, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -120.0
+offset_top = -160.0
+offset_right = 120.0
+offset_bottom = -145.0
+color = Color(0.270588, 0.431373, 0.431373, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -120.0
+offset_top = -145.0
+offset_right = -105.0
+offset_bottom = -80.0
+color = Color(0.270588, 0.431373, 0.431373, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 105.0
+offset_top = -145.0
+offset_right = 120.0
+offset_bottom = -80.0
+color = Color(0.270588, 0.431373, 0.431373, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = -105.0
+offset_top = -145.0
+offset_right = 105.0
+offset_bottom = -80.0
+color = Color(0.0666667, 0.133333, 0.133333, 0.564706)
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(0, -10)
+metadata/_edit_group_ = true
+
+[node name="7" type="Button" parent="Buttons"]
+offset_left = -105.0
+offset_top = -20.0
+offset_right = -65.0
+offset_bottom = 20.0
+text = "7"
+metadata/_edit_use_anchors_ = true
+
+[node name="8" type="Button" parent="Buttons"]
+offset_left = -55.0
+offset_top = -20.0
+offset_right = -15.0
+offset_bottom = 20.0
+text = "8"
+metadata/_edit_use_anchors_ = true
+
+[node name="9" type="Button" parent="Buttons"]
+offset_left = -5.0
+offset_top = -20.0
+offset_right = 35.0
+offset_bottom = 20.0
+text = "9"
+metadata/_edit_use_anchors_ = true
+
+[node name="4" type="Button" parent="Buttons"]
+offset_left = -105.0
+offset_top = 25.0
+offset_right = -65.0
+offset_bottom = 65.0
+text = "4"
+metadata/_edit_use_anchors_ = true
+
+[node name="5" type="Button" parent="Buttons"]
+offset_left = -55.0
+offset_top = 25.0
+offset_right = -15.0
+offset_bottom = 65.0
+text = "5"
+metadata/_edit_use_anchors_ = true
+
+[node name="6" type="Button" parent="Buttons"]
+offset_left = -5.0
+offset_top = 25.0
+offset_right = 35.0
+offset_bottom = 65.0
+text = "6"
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Button" parent="Buttons"]
+offset_left = -105.0
+offset_top = 70.0
+offset_right = -65.0
+offset_bottom = 110.0
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="2" type="Button" parent="Buttons"]
+offset_left = -55.0
+offset_top = 70.0
+offset_right = -15.0
+offset_bottom = 110.0
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="3" type="Button" parent="Buttons"]
+offset_left = -5.0
+offset_top = 70.0
+offset_right = 35.0
+offset_bottom = 110.0
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="dec" type="Button" parent="Buttons"]
+offset_left = -5.0
+offset_top = 115.0
+offset_right = 35.0
+offset_bottom = 155.0
+text = ".
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="0" type="Button" parent="Buttons"]
+offset_left = -105.0
+offset_top = 115.0
+offset_right = -15.0
+offset_bottom = 155.0
+text = "0"
+
+[node name="clear" type="Button" parent="Buttons"]
+offset_left = -90.0
+offset_top = -65.0
+offset_right = 30.0
+offset_bottom = -25.0
+text = "clear"
+
+[node name="div" type="Button" parent="Buttons"]
+offset_left = 45.0
+offset_top = -65.0
+offset_right = 105.0
+offset_bottom = -25.0
+text = "/"
+
+[node name="X" type="Button" parent="Buttons"]
+offset_left = 45.0
+offset_top = -20.0
+offset_right = 105.0
+offset_bottom = 20.0
+text = "x"
+
+[node name="-" type="Button" parent="Buttons"]
+offset_left = 45.0
+offset_top = 25.0
+offset_right = 105.0
+offset_bottom = 65.0
+text = "-"
+
+[node name="+" type="Button" parent="Buttons"]
+offset_left = 45.0
+offset_top = 70.0
+offset_right = 105.0
+offset_bottom = 110.0
+text = "+"
+
+[node name="=" type="Button" parent="Buttons"]
+offset_left = 45.0
+offset_top = 115.0
+offset_right = 105.0
+offset_bottom = 155.0
+text = "=
+"
+
+[node name="currentExpression" type="RichTextLabel" parent="."]
+offset_left = -105.0
+offset_top = -119.0
+offset_right = 105.0
+offset_bottom = -79.0
+text = "current-expression"
+
+[node name="expressionOld" type="RichTextLabel" parent="."]
+offset_left = -105.0
+offset_top = -145.0
+offset_right = 105.0
+offset_bottom = -120.0
+text = "expression-old"
+
+[connection signal="pressed" from="Buttons/7" to="." method="_on_7_pressed"]
+[connection signal="pressed" from="Buttons/8" to="." method="_on_8_pressed"]
+[connection signal="pressed" from="Buttons/9" to="." method="_on_9_pressed"]
+[connection signal="pressed" from="Buttons/4" to="." method="_on_4_pressed"]
+[connection signal="pressed" from="Buttons/5" to="." method="_on_5_pressed"]
+[connection signal="pressed" from="Buttons/6" to="." method="_on_6_pressed"]
+[connection signal="pressed" from="Buttons/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="Buttons/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="Buttons/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="Buttons/dec" to="." method="_on_dec_pressed"]
+[connection signal="pressed" from="Buttons/0" to="." method="_on_0_pressed"]
+[connection signal="pressed" from="Buttons/clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Buttons/div" to="." method="_on_div_pressed"]
+[connection signal="pressed" from="Buttons/X" to="." method="_on_x_pressed"]
+[connection signal="pressed" from="Buttons/-" to="." method="_on_min_pressed"]
+[connection signal="pressed" from="Buttons/+" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="Buttons/=" to="." method="_on_eq_pressed"]
