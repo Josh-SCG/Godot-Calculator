@@ -93,3 +93,4 @@ func _on_clear_pressed():
 	expression = Expression.new()
 	oldExpression.text = ""
 	currentExpression.text = ""
+	calcString = ""
